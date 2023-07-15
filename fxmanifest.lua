@@ -3,7 +3,7 @@ game 'gta5'
 lua54 'yes'
 
 author 'Renz'
-description 'Repair when the phone is wet'
+description 'A simple script to improve your phone features.'
 version '1.0.0'
 
 shared_scripts {
