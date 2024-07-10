@@ -75,32 +75,6 @@ AddEventHandler("renz_wetphone:fixphone", function()
     TriggerServerEvent("renz_wetphone:fixphone:server")
 end)    
 
--- I just want to use ox_lib for notifications lol
-
-RegisterNetEvent("showNotification")
-AddEventHandler("showNotification", function(source)
-    lib.notify({
-        description = 'Oops! Your phone is wet.',
-        type = 'inform'
-    })
-end)
-
-RegisterNetEvent("showNotification:noCash")
-AddEventHandler("showNotification:noCash", function(source)
-    lib.notify({
-        description = 'You dont have enough cash.',
-        type = 'error'
-    })
-end)
-
-RegisterNetEvent("showNotification:noPhone")
-AddEventHandler("showNotification:noPhone", function(source)
-    lib.notify({
-        description = 'You dont have wet phone.',
-        type = 'error'
-    })
-end)
-
 Citizen.CreateThread(function()
     local blipPos = vector3(Config.Coords)
     local blip = AddBlipForCoord(blipPos.x, blipPos.y, blipPos.z)
