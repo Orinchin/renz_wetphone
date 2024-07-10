@@ -9,7 +9,7 @@ AddEventHandler("renz_wetphone:damage", function()
         if hasItem > 0 then
             exports.ox_inventory:RemoveItem(_source, Config.Phone, 1)
             exports.ox_inventory:AddItem(_source, Config.WetPhone, 1)
-            TriggerClientEvent("showNotification", source)
+            TriggerClientEvent('ox_lib:notify', source, { title = 'System', description = 'Oops! Your phone is wet.', position = 'center-right', type = 'inform', duration = 3000 })
         end
     else
         DropPlayer(_source, kickMessage)
@@ -29,10 +29,10 @@ AddEventHandler("renz_wetphone:fixphone:server", function()
             exports.ox_inventory:RemoveItem(_source, "cash", Config.FixPrice)
             exports.ox_inventory:AddItem(_source, Config.Phone, 1)
             else
-                TriggerClientEvent("showNotification:noCash", source)
+                TriggerClientEvent('ox_lib:notify', source, { title = 'System', description = 'You dont have enough cash.', position = 'center-right', type = 'error', duration = 3000 })
             end
         else
-            TriggerClientEvent("showNotification:noPhone", source)
+            TriggerClientEvent('ox_lib:notify', source, { title = 'System', description = 'You dont have wet phone.', position = 'center-right', type = 'error', duration = 3000 })
         end
     else
         DropPlayer(_source, kickMessage)
